@@ -1,0 +1,22 @@
+wget -O - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
+sudo apt update && sudo apt install microsoft-edge-stable
+
+sudo apt install google-chrome-stable 
+sudo apt install gnome-tweaks 
+sudo apt install dconf-editor 
+sudo apt install xclip
+sudo apt install tree
+sudo apt install bat
+sudo apt install meld
+sudo apt install exa
+
+sudo apt install gnome-shell-extension-manager
+sudo apt-get install chrome-gnome-shell
+gsettings set org.gnome.shell disable-extension-version-validation true
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+nvm install node
+npm install gtop -g
+
+sudo apt install tmux
