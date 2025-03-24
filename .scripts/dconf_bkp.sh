@@ -1,5 +1,5 @@
 
-dconf dump / > ~/.dconf
+dconf dump / > ~/.dconf_tmp
 
 awk '
 BEGIN { RS = ""; FS = "\n" }  # Define blocos separados por linhas em branco
@@ -8,4 +8,4 @@ BEGIN { RS = ""; FS = "\n" }  # Define blocos separados por linhas em branco
         print $0  # Imprime o bloco inteiro
         print ""  # Adiciona uma linha em branco após cada bloco
     }
-}' ~/.dconf > ~/.dconf
+}' ~/.dconf_tmp > ~/.dconf

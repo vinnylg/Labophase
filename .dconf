@@ -1,0 +1,644 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/shell/app-switcher/'
+saved-view='/org/gnome/shell/app-switcher/'
+show-warning=false
+window-height=972
+window-is-maximized=false
+window-width=1912
+
+[com/mattjakeman/ExtensionManager]
+last-used-version='0.3.0'
+
+[com/system76/hidpi]
+mode='lodpi'
+
+[org/gnome/GWeather]
+temperature-unit='centigrade'
+
+[org/gnome/Weather]
+locations=[<(uint32 2, <('Curitiba', 'SBBI', false, [(-0.44389540060612698, -0.85986555063363712)], @a(dd) [])>)>]
+
+[org/gnome/baobab/ui]
+window-size=(948, 512)
+window-state=87168
+
+[org/gnome/control-center]
+last-panel='keyboard'
+
+[org/gnome/desktop/app-folders/folders/Pop-Office]
+apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
+name='Office'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Pop-System]
+apps=['gnome-language-selector.desktop', 'gnome-session-properties.desktop', 'gnome-system-monitor.desktop', 'im-config.desktop', 'nm-connection-editor.desktop', 'nvidia-settings.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.seahorse.Application.desktop', 'software-properties-gnome.desktop', 'system76-driver.desktop', 'system76-firmware.desktop']
+name='System'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Pop-Utility]
+apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'gucharmap.desktop', 'info.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Totem.desktop', 'pop-cosmic-applications.desktop', 'pop-cosmic-launcher.desktop', 'pop-cosmic-workspaces.desktop', 'simple-scan.desktop', 'yelp.desktop']
+name='Utilities'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri-dark='file:///usr/share/backgrounds/pop/nasa-89125.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
+[org/gnome/desktop/calendar]
+show-weekdate=true
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+mru-sources=[('xkb', 'br'), ('xkb', 'us')]
+per-window=false
+show-all-sources=true
+sources=[('xkb', 'br')]
+xkb-options=@as []
+
+[org/gnome/desktop/interface]
+clock-show-seconds=true
+clock-show-weekday=true
+color-scheme='prefer-dark'
+enable-hot-corners=true
+font-antialiasing='grayscale'
+font-hinting='slight'
+locate-pointer=true
+show-battery-percentage=true
+
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-diskutility', 'firefox', 'gnome-control-center', 'org-gnome-gedit', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-extensions-desktop', 'transmission-gtk', 'org-gnome-weather', 'rxvt-unicode']
+show-in-lock-screen=true
+
+[org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-control-center]
+application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-diskutility]
+application-id='org.gnome.DiskUtility.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-extensions-desktop]
+application-id='org.gnome.Extensions.desktop.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-fileroller]
+application-id='org.gnome.FileRoller.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-gedit]
+application-id='org.gnome.gedit.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-tweaks]
+application-id='org.gnome.tweaks.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-weather]
+application-id='org.gnome.Weather.desktop'
+
+[org/gnome/desktop/notifications/application/rxvt-unicode]
+application-id='rxvt-unicode.desktop'
+
+[org/gnome/desktop/notifications/application/transmission-gtk]
+application-id='transmission-gtk.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=false
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=false
+
+[org/gnome/desktop/peripherals/touchpad]
+natural-scroll=true
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+report-technical-problems=false
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+lock-delay=uint32 0
+lock-enabled=false
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/pop/nasa-89125.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
+[org/gnome/desktop/wm/keybindings]
+switch-applications=['<Alt>Tab']
+switch-applications-backward=['<Shift><Alt>Tab']
+
+[org/gnome/desktop/wm/preferences]
+action-middle-click-titlebar='minimize'
+auto-raise=true
+button-layout='appmenu:close'
+focus-mode='click'
+num-workspaces=2
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=459
+window-width=942
+
+[org/gnome/gedit/plugins]
+active-plugins=['openlinks', 'filebrowser', 'sort', 'docinfo', 'modelines', 'spell']
+
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///files/popos_bkp'
+
+[org/gnome/gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(954, 993)
+state=87168
+
+[org/gnome/meld/window-state]
+height=723
+is-maximized=false
+width=1358
+
+[org/gnome/mutter]
+center-new-windows=true
+dynamic-workspaces=true
+edge-tiling=false
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(954, 1019)
+maximized=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1]
+binding='Launch1'
+command='gnome-control-center wifi'
+name='WiFi'
+
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=false
+power-button-action='suspend'
+power-saver-profile-on-low-battery=false
+sleep-inactive-ac-timeout=1800
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
+sleep-inactive-battery-type='nothing'
+
+[org/gnome/shell]
+command-history=['r]', 'r']
+disable-extension-version-validation=true
+disable-user-extensions=false
+disabled-extensions=['caffeine@patapon.info', 'custom-osd@neuromorph']
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'cosmic-dock@system76.com', 'cosmic-workspaces@system76.com', 'popx11gestures@system76.com', 'gsconnect@andyholmes.github.io', 'transmission-daemon@patapon.info', 'openweather-extension@penguin-teal.github.io', 'workspaceAltTab@KrahnacK', 'workspace-bar@markbokil.com', 'workspace-grid@mathematical.coffee.gmail.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'system-monitor@paradoxxx.zero.gmail.com', 'clipboard-indicator@tudmotu.com', 'lockkeys@vaina.lt', 'sound-output-device-chooser@kgshank.net', 'timepp@zagortenay333', 'workspaces-by-open-apps@favo02.github.com', 'workspace_titles@ben.santalucia.me', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'weatherornot@somepaulo.github.io', 'openweather-extension@jenslody.de', 'trayIconsReloaded@selfmade.pl', 'cpupower@mko-sl.de', 'just_shows_memory_usage@troizet.github.com', 'ubuntu-appindicators@ubuntu.com', 'system-monitor-indicator@mknap.com', 'tophat@fflewddur.github.io', 'openbar@neuromorph', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+had-bluetooth-devices-setup=false
+welcome-dialog-last-shown-version='42.9'
+
+[org/gnome/shell/app-switcher]
+current-workspace-only=true
+
+[org/gnome/shell/extensions/caffeine]
+user-enabled=true
+
+[org/gnome/shell/extensions/cpupower]
+cpufreqctl-backend='automatic'
+default-ac-profile=''
+default-battery-profile=''
+frequency-sampling-mode='average'
+profiles=[(17, 17, false, 'Energy Saver', '3061026329'), (17, 30, false, 'Quiet', '562391312'), (20, 80, true, 'Multimedia', '780163798'), (50, 100, true, 'High Performance', '1985815996')]
+show-arrow-in-taskbar=false
+show-freq-in-taskbar=true
+show-icon-in-taskbar=false
+taskbar-freq-unit-ghz=true
+
+[org/gnome/shell/extensions/dash-to-dock]
+extend-height=false
+manualhide=true
+
+[org/gnome/shell/extensions/gsconnect]
+id='17beaee7-2d89-414b-bce6-01f6026400f0'
+name='lilith'
+
+[org/gnome/shell/extensions/lockkeys]
+notification-preferences='osd'
+style='show-hide'
+
+[org/gnome/shell/extensions/openbar]
+accent-color=['0', '0.75', '0.75']
+accent-override=false
+apply-accent-shell=true
+apply-all-shell=true
+apply-flatpak=false
+apply-gtk=false
+apply-menu-notif=true
+apply-menu-shell=true
+auto-bgalpha=true
+autofg-bar=true
+autofg-menu=true
+autohg-bar=true
+autohg-menu=true
+autotheme-dark='Select Theme'
+autotheme-font=false
+autotheme-light='Select Theme'
+autotheme-refresh=false
+balpha=0.84999999999999998
+bartype='Floating'
+bcolor=['1.0', '1.0', '1.0']
+bg-change=false
+bgalpha=0.94999999999999996
+bgalpha-wmax=1.0
+bgalpha2=0.69999999999999996
+bgcolor=['0.125', '0.125', '0.125']
+bgcolor-wmax=['0.125', '0.125', '0.125']
+bgcolor2=['0', '0.7', '0.75']
+bgpalette=true
+bguri='file:///usr/share/backgrounds/pop/ng-32703.jpg'
+border-wmax=false
+bordertype='solid'
+boxalpha=0.0
+boxcolor=['0.125', '0.125', '0.125']
+bradius=30.0
+bwidth=2.0
+candy1=['0', '0.61', '0.74']
+candy10=['0.09', '0.19', '0.72']
+candy11=['0.75', '0.49', '0.44']
+candy12=['1', '0.92', '0.12']
+candy13=['0.38', '0.63', '0.92']
+candy14=['0.37', '0.36', '0.39']
+candy15=['0.40', '0.23', '0.72']
+candy16=['1', '0.32', '0.32']
+candy2=['1', '0.41', '0.41']
+candy3=['0.63', '0.16', '0.8']
+candy4=['0.94', '0.60', '0.23']
+candy5=['0.03', '0.41', '0.62']
+candy6=['0.56', '0.18', '0.43']
+candy7=['0.95', '0.12', '0.67']
+candy8=['0.18', '0.76', '0.49']
+candy9=['0.93', '0.20', '0.23']
+candyalpha=0.98999999999999999
+candybar=false
+card-hint=10
+color-scheme='prefer-dark'
+count1=434906
+count10=112
+count11=29
+count12=1
+count2=117744
+count3=4149
+count4=1856
+count5=1550
+count6=747
+count7=504
+count8=206
+count9=196
+cust-margin-wmax=false
+dark-accent-color=['0', '0.75', '0.75']
+dark-bcolor=['1.0', '1.0', '1.0']
+dark-bgcolor=['0.125', '0.125', '0.125']
+dark-bgcolor-wmax=['0.125', '0.125', '0.125']
+dark-bgcolor2=['0', '0.7', '0.75']
+dark-bguri='file:///usr/share/backgrounds/pop/ng-32703.jpg'
+dark-boxcolor=['0.125', '0.125', '0.125']
+dark-candy1=['0', '0.61', '0.74']
+dark-candy10=['0.09', '0.19', '0.72']
+dark-candy11=['0.75', '0.49', '0.44']
+dark-candy12=['1', '0.92', '0.12']
+dark-candy13=['0.38', '0.63', '0.92']
+dark-candy14=['0.37', '0.36', '0.39']
+dark-candy15=['0.40', '0.23', '0.72']
+dark-candy16=['1', '0.32', '0.32']
+dark-candy2=['1', '0.41', '0.41']
+dark-candy3=['0.63', '0.16', '0.8']
+dark-candy4=['0.94', '0.60', '0.23']
+dark-candy5=['0.03', '0.41', '0.62']
+dark-candy6=['0.56', '0.18', '0.43']
+dark-candy7=['0.95', '0.12', '0.67']
+dark-candy8=['0.18', '0.76', '0.49']
+dark-candy9=['0.93', '0.20', '0.23']
+dark-dbgcolor=['0.125', '0.125', '0.125']
+dark-fgcolor=['1.0', '1.0', '1.0']
+dark-hcolor=['0', '0.7', '0.9']
+dark-iscolor=['0.125', '0.125', '0.125']
+dark-mbcolor=['1.0', '1.0', '1.0']
+dark-mbgcolor=['0.125', '0.125', '0.125']
+dark-mfgcolor=['1.0', '1.0', '1.0']
+dark-mhcolor=['0', '0.7', '0.9']
+dark-mscolor=['0', '0.7', '0.75']
+dark-mshcolor=['1.0', '1.0', '1.0']
+dark-palette1=['4', '29', '99']
+dark-palette10=['32', '192', '236']
+dark-palette11=['132', '132', '244']
+dark-palette12=['68', '52', '112']
+dark-palette2=['4', '127', '226']
+dark-palette3=['18', '227', '251']
+dark-palette4=['4', '81', '179']
+dark-palette5=['4', '56', '143']
+dark-palette6=['171', '241', '251']
+dark-palette7=['4', '100', '196']
+dark-palette8=['4', '52', '124']
+dark-palette9=['5', '92', '204']
+dark-shcolor=['0', '0', '0']
+dark-smbgcolor=['0.125', '0.125', '0.125']
+dark-winbcolor=['0.125', '0.125', '0.125']
+dashdock-style='Default'
+dbgalpha=0.84999999999999998
+dbgcolor=['0.125', '0.125', '0.125']
+dborder=true
+dbradius=100.0
+default-font='Sans 12'
+destruct-color=['0.75', '0.11', '0.16']
+disize=48.0
+dshadow=true
+fgalpha=1.0
+fgcolor=['1.0', '1.0', '1.0']
+font=''
+gradient=false
+gradient-direction='vertical'
+gtk-popover=false
+halpha=0.5
+handle-border=3.0
+hcolor=['0', '0.7', '0.9']
+headerbar-hint=0
+heffect=false
+height=35.0
+hpad=0.0
+import-export=false
+isalpha=0.94999999999999996
+iscolor=['0.125', '0.125', '0.125']
+light-accent-color=['0', '0.75', '0.75']
+light-bcolor=['1.0', '1.0', '1.0']
+light-bgcolor=['0.125', '0.125', '0.125']
+light-bgcolor-wmax=['0.125', '0.125', '0.125']
+light-bgcolor2=['0', '0.7', '0.75']
+light-bguri='file:///usr/share/backgrounds/pop/kate-hazen-pop-retro1.png'
+light-boxcolor=['0.125', '0.125', '0.125']
+light-candy1=['0', '0.61', '0.74']
+light-candy10=['0.09', '0.19', '0.72']
+light-candy11=['0.75', '0.49', '0.44']
+light-candy12=['1', '0.92', '0.12']
+light-candy13=['0.38', '0.63', '0.92']
+light-candy14=['0.37', '0.36', '0.39']
+light-candy15=['0.40', '0.23', '0.72']
+light-candy16=['1', '0.32', '0.32']
+light-candy2=['1', '0.41', '0.41']
+light-candy3=['0.63', '0.16', '0.8']
+light-candy4=['0.94', '0.60', '0.23']
+light-candy5=['0.03', '0.41', '0.62']
+light-candy6=['0.56', '0.18', '0.43']
+light-candy7=['0.95', '0.12', '0.67']
+light-candy8=['0.18', '0.76', '0.49']
+light-candy9=['0.93', '0.20', '0.23']
+light-dbgcolor=['0.125', '0.125', '0.125']
+light-fgcolor=['1.0', '1.0', '1.0']
+light-hcolor=['0', '0.7', '0.9']
+light-iscolor=['0.125', '0.125', '0.125']
+light-mbcolor=['1.0', '1.0', '1.0']
+light-mbgcolor=['0.125', '0.125', '0.125']
+light-mfgcolor=['1.0', '1.0', '1.0']
+light-mhcolor=['0', '0.7', '0.9']
+light-mscolor=['0', '0.7', '0.75']
+light-mshcolor=['1.0', '1.0', '1.0']
+light-palette1=['68', '176', '187']
+light-palette10=['108', '196', '204']
+light-palette11=['206', '220', '220']
+light-palette12=['68', '164', '164']
+light-palette2=['242', '242', '241']
+light-palette3=['67', '164', '176']
+light-palette4=['135', '201', '208']
+light-palette5=['180', '218', '222']
+light-palette6=['96', '186', '194']
+light-palette7=['84', '180', '193']
+light-palette8=['228', '228', '220']
+light-palette9=['102', '188', '204']
+light-shcolor=['0', '0', '0']
+light-smbgcolor=['0.125', '0.125', '0.125']
+light-winbcolor=['0.125', '0.125', '0.125']
+margin=1.0
+margin-wmax=2.0
+mbalpha=0.65000000000000002
+mbcolor=['1.0', '1.0', '1.0']
+mbg-gradient=false
+mbgalpha=0.94999999999999996
+mbgcolor=['0.125', '0.125', '0.125']
+menu-radius=21.0
+menustyle=true
+mfgalpha=1.0
+mfgcolor=['1.0', '1.0', '1.0']
+mhalpha=0.34999999999999998
+mhcolor=['0', '0.7', '0.9']
+monitors='all'
+msalpha=0.84999999999999998
+mscolor=['0', '0.7', '0.75']
+mshalpha=0.16
+mshcolor=['1.0', '1.0', '1.0']
+neon=true
+neon-wmax=false
+notif-radius=10.0
+palette1=['4', '29', '99']
+palette10=['32', '192', '236']
+palette11=['132', '132', '244']
+palette12=['68', '52', '112']
+palette2=['4', '127', '226']
+palette3=['18', '227', '251']
+palette4=['4', '81', '179']
+palette5=['4', '56', '143']
+palette6=['171', '241', '251']
+palette7=['4', '100', '196']
+palette8=['4', '52', '124']
+palette9=['5', '92', '204']
+pause-reload=false
+position='Top'
+prominent1=['100', '100', '100']
+prominent2=['100', '100', '100']
+prominent3=['100', '100', '100']
+prominent4=['100', '100', '100']
+prominent5=['100', '100', '100']
+prominent6=['100', '100', '100']
+qtoggle-radius=50.0
+radius-bottomleft=true
+radius-bottomright=true
+radius-topleft=true
+radius-topright=true
+reloadstyle=true
+removestyle=false
+set-fullscreen=true
+set-notifications=false
+set-overview=false
+set-yarutheme=false
+shadow=false
+shalpha=0.20000000000000001
+shcolor=['0', '0', '0']
+sidebar-hint=10
+sidebar-transparency=false
+slider-height=4.0
+smbgalpha=0.94999999999999996
+smbgcolor=['0.125', '0.125', '0.125']
+smbgoverride=false
+success-color=['0.15', '0.635', '0.41']
+traffic-light=false
+trigger-autotheme=false
+trigger-reload=false
+vpad=0.0
+warning-color=['0.96', '0.83', '0.17']
+width-bottom=true
+width-left=true
+width-right=true
+width-top=true
+winbalpha=0.75
+winbcolor=['0.125', '0.125', '0.125']
+winbwidth=0.0
+wmaxbar=false
+
+[org/gnome/shell/extensions/openweather]
+city='-25.4295963,-49.2712724>Curitiba, Paraná, Brasil>0'
+days-forecast=3
+expand-forecast=true
+geolocation-provider='openstreetmaps'
+location-text-length=30
+menu-alignment=56.896551724137936
+owm-api-translate=false
+position-in-panel='center'
+prefs-default-height=1019
+prefs-default-width=954
+show-comment-in-panel=true
+use-system-icons=true
+wind-direction=true
+
+[org/gnome/shell/extensions/pop-cosmic]
+show-applications-button=false
+show-workspaces-button=false
+
+[org/gnome/shell/extensions/pop-shell]
+active-hint=true
+active-hint-border-radius=uint32 11
+gap-inner=uint32 1
+gap-outer=uint32 1
+hint-color-rgba='rgba(108,138,251,0.486486)'
+mouse-cursor-focus-location=uint32 0
+show-title=true
+snap-to-grid=false
+tile-by-default=true
+
+[org/gnome/shell/extensions/sound-output-device-chooser]
+hide-on-single-device=true
+icon-theme='monochrome'
+integrate-with-slider=true
+omit-device-origins=false
+
+[org/gnome/shell/extensions/timepp]
+alarms-fullscreen-monitor-pos=0
+alarms-sound-file-path='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+panel-item-position='Right'
+pomodoro-do-repeat-notif-sound=true
+pomodoro-fullscreen-monitor-pos=0
+pomodoro-play-sound-long-break=true
+pomodoro-play-sound-pomo=true
+pomodoro-play-sound-short-break=true
+pomodoro-separate-menu=true
+pomodoro-show-seconds=true
+pomodoro-sound-file-path-long-break='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+pomodoro-sound-file-path-pomo='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+pomodoro-sound-file-path-short-break='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+sections={'Timer': {'enabled': false}, 'Stopwatch': {'enabled': false}, 'Pomodoro': {'enabled': true}, 'Alarms': {'enabled': false}, 'Todo': {'enabled': false}}
+stopwatch-fullscreen-monitor-pos=0
+timer-fullscreen-monitor-pos=0
+timer-separate-menu=true
+timer-show-seconds=true
+timer-sound-file-path='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+unicon-mode=false
+
+[org/gnome/shell/extensions/workspace_titles]
+titles=['untitled', 'untitled', 'untitled', 'untitled']
+
+[org/gnome/shell/extensions/workspaces-indicator-by-open-apps]
+apps-all-desaturate=false
+indicator-all-text='0'
+indicator-hide-empty=false
+scroll-wraparound=false
+
+[org/gnome/shell/keybindings]
+toggle-overview=['<Super>Tab']
+
+[org/gnome/shell/weather]
+automatic-location=true
+locations=[<(uint32 2, <('Curitiba', 'SBBI', false, [(-0.44389540060612698, -0.85986555063363712)], @a(dd) [])>)>]
+
+[org/gnome/system/location]
+enabled=true
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(23,20,33)'
+background-transparency-percent=14
+cursor-blink-mode='on'
+cursor-shape='ibeam'
+default-size-columns=16
+foreground-color='rgb(208,207,204)'
+scroll-on-keystroke=true
+scrollback-unlimited=true
+scrollbar-policy='never'
+use-theme-colors=true
+use-theme-transparency=false
+use-transparent-background=true
+
+[org/gtk/gtk4/settings/color-chooser]
+selected-color=(true, 1.0, 1.0, 1.0, 1.0)
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=162
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-size=(805, 374)
+
+[org/gtk/settings/color-chooser]
+custom-colors=[(0.42352941176470582, 0.54117647058823515, 0.98431372549019602, 0.48648648648648651), (0.42352941176470588, 0.54117647058823526, 0.98431372549019602, 1.0), (0.42352941176470582, 0.54099099099099079, 0.98431372549019602, 1.0), (0.98431372549019602, 0.72156862745098038, 0.42352941176470588, 1.0)]
+selected-color=(true, 0.42352941176470582, 0.54117647058823515, 0.98431372549019602, 0.48648648648648651)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=150
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+window-position=(798, 121)
+window-size=(1096, 822)
+
