@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f $HOME/.dconf ]; then
-    # dconf load / < $HOME/.dconf
+    dconf load / < $HOME/.dconf
     echo "$HOME/.dconf loaded"
 else
     echo "$HOME/.dconf not found"

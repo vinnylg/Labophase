@@ -15,9 +15,14 @@
 !.local/
 !.local/bin/
 !.local/bin/*
+!.local/share/
+!.local/share/gnome-shell/
+!.local/share/gnome-shell/extensions/
+!.local/share/gnome-shell/extensions/*
 
 !.config/
 !.config/autostart/
 !.config/autostart/*
+
 
 !labophase_issues.txt
