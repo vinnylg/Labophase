@@ -49,7 +49,7 @@ window-position=(964, 49)
 word-size=64
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='info-overview'
 
 [org/gnome/desktop/a11y/applications]
 screen-magnifier-enabled=false
@@ -95,7 +95,7 @@ xkb-options=@as []
 clock-show-seconds=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
-enable-animations=false
+enable-animations=true
 enable-hot-corners=true
 font-antialiasing='grayscale'
 font-hinting='slight'
@@ -104,7 +104,7 @@ show-battery-percentage=true
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-diskutility', 'firefox', 'gnome-control-center', 'org-gnome-gedit', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-extensions-desktop', 'transmission-gtk', 'org-gnome-weather', 'rxvt-unicode', 'org-gnome-shell-extensions', 'org-gnome-calculator', 'org-gnome-geary']
+application-children=['org-gnome-diskutility', 'firefox', 'gnome-control-center', 'org-gnome-gedit', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-extensions-desktop', 'transmission-gtk', 'org-gnome-weather', 'rxvt-unicode', 'org-gnome-shell-extensions', 'org-gnome-calculator', 'org-gnome-geary', 'org-gnome-tweaks']
 show-in-lock-screen=true
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
@@ -175,7 +175,7 @@ primary-color='#000000'
 secondary-color='#000000'
 
 [org/gnome/desktop/session]
-idle-delay=uint32 0
+idle-delay=uint32 600
 
 [org/gnome/desktop/wm/keybindings]
 cycle-windows=['<Primary>Tab']
@@ -260,7 +260,7 @@ width=1358
 center-new-windows=true
 dynamic-workspaces=false
 edge-tiling=false
-workspaces-only-on-primary=true
+workspaces-only-on-primary=false
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
@@ -448,13 +448,11 @@ command='workspace_switchback'
 name='Switch back'
 
 [org/gnome/settings-daemon/plugins/power]
-idle-dim=false
-power-button-action='suspend'
-power-saver-profile-on-low-battery=false
-sleep-inactive-ac-timeout=1800
+idle-dim=true
+power-button-action='nothing'
+power-saver-profile-on-low-battery=true
 sleep-inactive-ac-type='nothing'
-sleep-inactive-battery-timeout=1800
-sleep-inactive-battery-type='nothing'
+sleep-inactive-battery-type='suspend'
 
 [org/gnome/shell]
 command-history=['r]', 'r']
@@ -938,7 +936,7 @@ selected-color=(true, 0.42352941176470582, 0.54117647058823515, 0.98431372549019
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
-show-hidden=true
+show-hidden=false
 show-size-column=true
 show-type-column=true
 sidebar-width=150
@@ -946,6 +944,6 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(2055, 0)
+window-position=(0, 100)
 window-size=(1096, 822)
 
