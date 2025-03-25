@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Workspace Monitor
+Exec=~/.local/bin/workspace_monitor
+StartupNotify=false

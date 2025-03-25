@@ -1,10 +1,11 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/app-switcher/'
-saved-view='/org/gnome/shell/app-switcher/'
+restore-view=false
+saved-pathbar-path='/ca/desrt/dconf-editor/saved-view'
+saved-view='/ca/desrt/dconf-editor/'
 show-warning=false
-window-height=972
+window-height=681
 window-is-maximized=false
-window-width=1912
+window-width=1350
 
 [com/mattjakeman/ExtensionManager]
 last-used-version='0.3.0'
@@ -15,6 +16,16 @@ mode='lodpi'
 [org/gnome/GWeather]
 temperature-unit='centigrade'
 
+[org/gnome/Geary]
+migrated-config=true
+window-height=1023
+window-maximize=false
+window-width=1904
+
+[org/gnome/Totem]
+active-plugins=['save-file', 'movie-properties', 'screensaver', 'recent', 'open-directory', 'vimeo', 'rotation', 'apple-trailers', 'skipto', 'screenshot', 'autoload-subtitles', 'variable-rate', 'mpris']
+subtitle-encoding='UTF-8'
+
 [org/gnome/Weather]
 locations=[<(uint32 2, <('Curitiba', 'SBBI', false, [(-0.44389540060612698, -0.85986555063363712)], @a(dd) [])>)>]
 
@@ -22,8 +33,30 @@ locations=[<(uint32 2, <('Curitiba', 'SBBI', false, [(-0.44389540060612698, -0.8
 window-size=(948, 512)
 window-state=87168
 
+[org/gnome/calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(964, 49)
+word-size=64
+
 [org/gnome/control-center]
 last-panel='keyboard'
+
+[org/gnome/desktop/a11y/applications]
+screen-magnifier-enabled=false
+screen-reader-enabled=false
+
+[org/gnome/desktop/a11y/magnifier]
+mag-factor=2.0
 
 [org/gnome/desktop/app-folders/folders/Pop-Office]
 apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
@@ -55,21 +88,23 @@ current=uint32 0
 mru-sources=[('xkb', 'br'), ('xkb', 'us')]
 per-window=false
 show-all-sources=true
-sources=[('xkb', 'br')]
+sources=[('xkb', 'br'), ('xkb', 'us')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
 clock-show-seconds=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
+enable-animations=false
 enable-hot-corners=true
 font-antialiasing='grayscale'
 font-hinting='slight'
 locate-pointer=true
 show-battery-percentage=true
+toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-diskutility', 'firefox', 'gnome-control-center', 'org-gnome-gedit', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-extensions-desktop', 'transmission-gtk', 'org-gnome-weather', 'rxvt-unicode']
+application-children=['org-gnome-diskutility', 'firefox', 'gnome-control-center', 'org-gnome-gedit', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-extensions-desktop', 'transmission-gtk', 'org-gnome-weather', 'rxvt-unicode', 'org-gnome-shell-extensions', 'org-gnome-calculator', 'org-gnome-geary']
 show-in-lock-screen=true
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
@@ -81,6 +116,9 @@ application-id='firefox.desktop'
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-calculator]
+application-id='org.gnome.Calculator.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-diskutility]
 application-id='org.gnome.DiskUtility.desktop'
 
@@ -90,11 +128,17 @@ application-id='org.gnome.Extensions.desktop.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-fileroller]
 application-id='org.gnome.FileRoller.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-geary]
+application-id='org.gnome.Geary.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-gedit]
 application-id='org.gnome.gedit.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-tweaks]
 application-id='org.gnome.tweaks.desktop'
@@ -134,15 +178,28 @@ secondary-color='#000000'
 idle-delay=uint32 0
 
 [org/gnome/desktop/wm/keybindings]
+cycle-windows=['<Primary>Tab']
+cycle-windows-backward=['<Primary><Shift>Tab']
+minimize=['<Primary><Super>m']
+move-to-workspace-1=['<Shift><Super>Home']
 switch-applications=['<Alt>Tab']
 switch-applications-backward=['<Shift><Alt>Tab']
+switch-input-source=['<Primary>space']
+switch-input-source-backward=['<Primary><Shift>space']
+switch-to-workspace-1=['<Super>Home']
+switch-to-workspace-2=@as []
+switch-to-workspace-3=@as []
+switch-to-workspace-4=@as []
+switch-windows=@as []
+switch-windows-backward=@as []
+toggle-fullscreen=['<Shift><Super>f', '<Shift><Super>m']
 
 [org/gnome/desktop/wm/preferences]
 action-middle-click-titlebar='minimize'
 auto-raise=true
 button-layout='appmenu:close'
 focus-mode='click'
-num-workspaces=2
+num-workspaces=10
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -166,17 +223,33 @@ active-plugins=['openlinks', 'filebrowser', 'sort', 'docinfo', 'modelines', 'spe
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///files/popos_bkp'
+virtual-root='file:///home/vlgoncalves'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
+
+[org/gnome/gedit/state/history-entry]
+replace-with-entry=['Shift', 'Control']
+search-for-entry=['org/gnome/settings-daemon/plugins/media-keys/', 'Control', 'Shift']
 
 [org/gnome/gedit/state/window]
 bottom-panel-size=140
 side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
-size=(954, 993)
+size=(1350, 705)
 state=87168
+
+[org/gnome/gnome-system-monitor]
+current-tab='resources'
+maximized=false
+network-total-in-bits=false
+show-dependencies=false
+show-whose-processes='user'
+window-state=(671, 752, 2607, 8)
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
 
 [org/gnome/meld/window-state]
 height=723
@@ -185,24 +258,194 @@ width=1358
 
 [org/gnome/mutter]
 center-new-windows=true
-dynamic-workspaces=true
+dynamic-workspaces=false
 edge-tiling=false
+workspaces-only-on-primary=true
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-initial-size=(954, 1019)
+initial-size=(948, 1023)
 maximized=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1/']
+calculator=['<Shift><Super>c']
+control-center=['<Shift><Super>s']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspaceBack/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspaceBack/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/LaunchVSCode/']
+search=['<Primary><Super>s']
+www=['<Super>w']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/LaunchVSCode]
+binding='<Super>c'
+command='code'
+name='VSCode'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace1]
+binding='<Shift><Super>1'
+command='workspace_moveswitch 1'
+name='Move+Switch to workspace 1'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace10]
+binding='<Shift><Super>0'
+command='workspace_moveswitch 10'
+name='Move+Switch to workspace 10'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace2]
+binding='<Shift><Super>2'
+command='workspace_moveswitch 2'
+name='Move+Switch to workspace 2'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace3]
+binding='<Shift><Super>3'
+command='workspace_moveswitch 3'
+name='Move+Switch to workspace 3'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace4]
+binding='<Shift><Super>4'
+command='workspace_moveswitch 4'
+name='Move+Switch to workspace 4'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace5]
+binding='<Shift><Super>5'
+command='workspace_moveswitch 5'
+name='Move+Switch to workspace 5'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace6]
+binding='<Shift><Super>6'
+command='workspace_moveswitch 6'
+name='Move+Switch to workspace 6'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace7]
+binding='<Shift><Super>7'
+command='workspace_moveswitch 7'
+name='Move+Switch to workspace 7'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace8]
+binding='<Shift><Super>8'
+command='workspace_moveswitch 8'
+name='Move+Switch to workspace 8'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspace9]
+binding='<Shift><Super>9'
+command='workspace_moveswitch 9'
+name='Move+Switch to workspace 9'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveSwitchWorkspaceBack]
+binding='<Shift><Super>BackSpace'
+command='workspace_moveswitchback'
+name='Move and Switch back'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace1]
+binding='<Control><Super>1'
+command='workspace_move 1'
+name='Move to workspace 1'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace10]
+binding='<Control><Super>0'
+command='workspace_move 10'
+name='Move to workspace 10'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace2]
+binding='<Control><Super>2'
+command='workspace_move 2'
+name='Move to workspace 2'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace3]
+binding='<Control><Super>3'
+command='workspace_move 3'
+name='Move to workspace 3'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace4]
+binding='<Control><Super>4'
+command='workspace_move 4'
+name='Move to workspace 4'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace5]
+binding='<Control><Super>5'
+command='workspace_move 5'
+name='Move to workspace 5'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace6]
+binding='<Control><Super>6'
+command='workspace_move 6'
+name='Move to workspace 6'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace7]
+binding='<Control><Super>7'
+command='workspace_move 7'
+name='Move to workspace 7'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace8]
+binding='<Control><Super>8'
+command='workspace_move 8'
+name='Move to workspace 8'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/MoveWorkspace9]
+binding='<Control><Super>9'
+command='workspace_move 9'
+name='Move to workspace 9'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1]
 binding='Launch1'
 command='gnome-control-center wifi'
 name='WiFi'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace1]
+binding='<Super>1'
+command='workspace_switch 1'
+name='Switch to workspace 1'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace10]
+binding='<Super>0'
+command='workspace_switch 10'
+name='Switch to workspace 10'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace2]
+binding='<Super>2'
+command='workspace_switch 2'
+name='Switch to workspace 2'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace3]
+binding='<Super>3'
+command='workspace_switch 3'
+name='Switch to workspace 3'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace4]
+binding='<Super>4'
+command='workspace_switch 4'
+name='Switch to workspace 4'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace5]
+binding='<Super>5'
+command='workspace_switch 5'
+name='Switch to workspace 5'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace6]
+binding='<Super>6'
+command='workspace_switch 6'
+name='Switch to workspace 6'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace7]
+binding='<Super>7'
+command='workspace_switch 7'
+name='Switch to workspace 7'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace8]
+binding='<Super>8'
+command='workspace_switch 8'
+name='Switch to workspace 8'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspace9]
+binding='<Super>9'
+command='workspace_switch 9'
+name='Switch to workspace 9'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/SwitchWorkspaceBack]
+binding='<Super>BackSpace'
+command='workspace_switchback'
+name='Switch back'
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=false
@@ -217,21 +460,26 @@ sleep-inactive-battery-type='nothing'
 command-history=['r]', 'r']
 disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['caffeine@patapon.info', 'custom-osd@neuromorph']
-enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'cosmic-dock@system76.com', 'cosmic-workspaces@system76.com', 'popx11gestures@system76.com', 'gsconnect@andyholmes.github.io', 'transmission-daemon@patapon.info', 'openweather-extension@penguin-teal.github.io', 'workspaceAltTab@KrahnacK', 'workspace-bar@markbokil.com', 'workspace-grid@mathematical.coffee.gmail.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'system-monitor@paradoxxx.zero.gmail.com', 'clipboard-indicator@tudmotu.com', 'lockkeys@vaina.lt', 'sound-output-device-chooser@kgshank.net', 'timepp@zagortenay333', 'workspaces-by-open-apps@favo02.github.com', 'workspace_titles@ben.santalucia.me', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'weatherornot@somepaulo.github.io', 'openweather-extension@jenslody.de', 'trayIconsReloaded@selfmade.pl', 'cpupower@mko-sl.de', 'just_shows_memory_usage@troizet.github.com', 'ubuntu-appindicators@ubuntu.com', 'system-monitor-indicator@mknap.com', 'tophat@fflewddur.github.io', 'openbar@neuromorph', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+disabled-extensions=['custom-osd@neuromorph', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection', 'caffeine@patapon.info', 'timepp@zagortenay333']
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'system76-power@system76.com', 'cosmic-dock@system76.com', 'cosmic-workspaces@system76.com', 'gsconnect@andyholmes.github.io', 'transmission-daemon@patapon.info', 'openweather-extension@penguin-teal.github.io', 'workspaceAltTab@KrahnacK', 'workspace-bar@markbokil.com', 'workspace-grid@mathematical.coffee.gmail.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'system-monitor@paradoxxx.zero.gmail.com', 'sound-output-device-chooser@kgshank.net', 'workspace_titles@ben.santalucia.me', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'weatherornot@somepaulo.github.io', 'openweather-extension@jenslody.de', 'just_shows_memory_usage@troizet.github.com', 'ubuntu-appindicators@ubuntu.com', 'system-monitor-indicator@mknap.com', 'openbar@neuromorph', 'PanelHidesWindow@arisoda.com', 'big-avatar@gustavoperedo.org', 'sound-percentage@maestroschan.fr', 'workspaces-by-open-apps@favo02.github.com', 'pop-shell@system76.com', 'trayIconsReloaded@selfmade.pl', 'clipboard-indicator@tudmotu.com', 'tophat@fflewddur.github.io', 'cpupower@mko-sl.de', 'lockkeys@vaina.lt', 'popx11gestures@system76.com']
 had-bluetooth-devices-setup=false
 welcome-dialog-last-shown-version='42.9'
 
 [org/gnome/shell/app-switcher]
 current-workspace-only=true
 
+[org/gnome/shell/extensions/big-avatar]
+command='gnome-control-center'
+horizontalmode=false
+
 [org/gnome/shell/extensions/caffeine]
+nightlight-control='never'
 user-enabled=true
 
 [org/gnome/shell/extensions/cpupower]
 cpufreqctl-backend='automatic'
-default-ac-profile=''
-default-battery-profile=''
+default-ac-profile='1985815996'
+default-battery-profile='3061026329'
 frequency-sampling-mode='average'
 profiles=[(17, 17, false, 'Energy Saver', '3061026329'), (17, 30, false, 'Quiet', '562391312'), (20, 80, true, 'Multimedia', '780163798'), (50, 100, true, 'High Performance', '1985815996')]
 show-arrow-in-taskbar=false
@@ -247,9 +495,36 @@ manualhide=true
 id='17beaee7-2d89-414b-bce6-01f6026400f0'
 name='lilith'
 
+[org/gnome/shell/extensions/just-perfection]
+accessibility-menu=true
+app-menu=true
+app-menu-icon=true
+background-menu=true
+controls-manager-spacing-size=0
+dash=true
+dash-icon-size=0
+double-super-to-appgrid=true
+osd=true
+panel=true
+panel-in-overview=true
+ripple-box=true
+search=true
+show-apps-button=true
+startup-status=1
+theme=false
+top-panel-position=0
+window-demands-attention-focus=false
+window-picker-icon=true
+window-preview-caption=true
+window-preview-close-button=true
+workspace=true
+workspace-background-corner-size=0
+workspace-popup=true
+workspaces-in-app-grid=true
+
 [org/gnome/shell/extensions/lockkeys]
 notification-preferences='osd'
-style='show-hide'
+style='show-hide-capslock'
 
 [org/gnome/shell/extensions/openbar]
 accent-color=['0', '0.75', '0.75']
@@ -535,17 +810,25 @@ wind-direction=true
 [org/gnome/shell/extensions/pop-cosmic]
 show-applications-button=false
 show-workspaces-button=false
+workspace-picker-left=true
 
 [org/gnome/shell/extensions/pop-shell]
 active-hint=true
-active-hint-border-radius=uint32 11
-gap-inner=uint32 1
-gap-outer=uint32 1
+active-hint-border-radius=uint32 10
+fullscreen-launcher=true
+gap-inner=uint32 2
+gap-outer=uint32 2
 hint-color-rgba='rgba(108,138,251,0.486486)'
-mouse-cursor-focus-location=uint32 0
-show-title=true
+mouse-cursor-focus-location=uint32 4
+mouse-cursor-follows-active-window=true
+show-skip-taskbar=true
+show-stack-tab-buttons=true
+show-title=false
+smart-gaps=false
 snap-to-grid=false
+stacking-with-mouse=true
 tile-by-default=true
+toggle-floating=['<Super>space']
 
 [org/gnome/shell/extensions/sound-output-device-chooser]
 hide-on-single-device=true
@@ -556,9 +839,11 @@ omit-device-origins=false
 [org/gnome/shell/extensions/timepp]
 alarms-fullscreen-monitor-pos=0
 alarms-sound-file-path='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
-panel-item-position='Right'
-pomodoro-do-repeat-notif-sound=true
-pomodoro-fullscreen-monitor-pos=0
+panel-item-position='Left'
+pomodoro-do-repeat-notif-sound=false
+pomodoro-fullscreen-monitor-pos=1
+pomodoro-notif-style='Fullscreen'
+pomodoro-panel-mode='Icon and Text'
 pomodoro-play-sound-long-break=true
 pomodoro-play-sound-pomo=true
 pomodoro-play-sound-short-break=true
@@ -567,21 +852,43 @@ pomodoro-show-seconds=true
 pomodoro-sound-file-path-long-break='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
 pomodoro-sound-file-path-pomo='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
 pomodoro-sound-file-path-short-break='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
-sections={'Timer': {'enabled': false}, 'Stopwatch': {'enabled': false}, 'Pomodoro': {'enabled': true}, 'Alarms': {'enabled': false}, 'Todo': {'enabled': false}}
+sections={'Timer': {'enabled': true}, 'Stopwatch': {'enabled': true}, 'Pomodoro': {'enabled': true}, 'Alarms': {'enabled': false}, 'Todo': {'enabled': false}}
 stopwatch-fullscreen-monitor-pos=0
 timer-fullscreen-monitor-pos=0
+timer-notif-style='Fullscreen'
+timer-play-sound=true
 timer-separate-menu=true
 timer-show-seconds=true
 timer-sound-file-path='file:///home/vlgoncalves/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
 unicon-mode=false
+
+[org/gnome/shell/extensions/tophat]
+cpu-display='both'
+disk-display='both'
+disk-monitor-mode='both'
+mem-display='both'
+mount-to-monitor='/'
+position-in-panel='right'
+refresh-rate='fast'
+show-disk=false
+show-icons=false
+show-net=false
 
 [org/gnome/shell/extensions/workspace_titles]
 titles=['untitled', 'untitled', 'untitled', 'untitled']
 
 [org/gnome/shell/extensions/workspaces-indicator-by-open-apps]
 apps-all-desaturate=false
+apps-inactive-effect='REDUCE OPACITY'
+apps-minimized-effect='DESATURATE'
+icons-group='OFF'
 indicator-all-text='0'
-indicator-hide-empty=false
+indicator-hide-empty=true
+indicator-round-borders=false
+indicator-show-active-workspace=false
+indicator-show-focused-app=false
+indicator-show-indexes=true
+indicator-use-custom-names=false
 scroll-wraparound=false
 
 [org/gnome/shell/keybindings]
@@ -631,7 +938,7 @@ selected-color=(true, 0.42352941176470582, 0.54117647058823515, 0.98431372549019
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
-show-hidden=false
+show-hidden=true
 show-size-column=true
 show-type-column=true
 sidebar-width=150
@@ -639,6 +946,6 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(798, 121)
+window-position=(2055, 0)
 window-size=(1096, 822)
 

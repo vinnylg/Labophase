@@ -1,0 +1,3 @@
+#!/bin/bash
+# Move a janela e muda para o workspace (Y = número do workspace)
+$HOME/.local/bin/workspace_move "$1" && $HOME/.local/bin/workspace_switch "$1"

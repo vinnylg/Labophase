@@ -1,0 +1,11 @@
+#!/bin/bash
+# Move Janela para Workspace (base 1 para base 0)
+# Uso: workspace_move [NÚMERO_DO_WORKSPACE]
+
+[ -z "$1" ] && exit 0  # Sai silenciosamente sem argumento
+
+TARGET_WS=$(($1 - 1))
+CURRENT_WS=$(wmctrl -d | grep '*' | awk '{print $1}')
+
+# Só move se o workspace destino for diferente do atual
+[ "$TARGET_WS" -ne "$CURRENT_WS" ] && wmctrl -r :ACTIVE: -t "$TARGET_WS"

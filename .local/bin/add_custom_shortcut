@@ -1,0 +1,48 @@
+#!/bin/bash
+# $HOME/.local/bin/add_custom_shortcut (versão simplificada e confiável)
+
+echo "🛠️  GNOME Custom Shortcut Creator (Simplificado)"
+
+# 1. Obter nome do diretório (automático baseado no nome do app)
+read -p "1. Nome do atalho (ex: VSCode, Chrome, etc): " app_name
+dir_name="Launch$(echo $app_name | tr -d ' ')"
+echo "   → Será criado em: /org/gnome/.../custom-keybindings/$dir_name/"
+
+# 2. Obter comando com sugestões
+read -p "2. Digite o comando: " command
+
+# 3. Configurar tecla de atalho
+echo "3. Configure o atalho de teclado (formato: <Super>d, <Control><Alt>t, etc)"
+echo "   Exemplos comuns:"
+echo "   - <Super>e        (Super + E)"
+echo "   - <Control><Alt>t (Ctrl + Alt + T)"
+echo "   - <Shift><Super>c (Shift + Super + C)"
+read -p "   Seu atalho: " key_binding
+
+# Confirmar
+echo -e "\n🔍 Resumo:"
+echo "   Nome: $app_name"
+echo "   Comando: $command"
+echo "   Atalho: $key_binding"
+read -p "Confirmar criação? (s/n): " confirm
+
+if [[ "$confirm" =~ ^[Ss]$ ]]; then
+    # Adicionar à lista de keybindings
+    current_keys=$(dconf read /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings)
+    new_key="'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/'"
+    
+    if [ "$current_keys" == "@as []" ]; then
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "[$new_key]"
+    else
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "${current_keys%]*}, $new_key]"
+    fi
+
+    # Criar o shortcut
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/name "'$app_name'"
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/command "'$command'"
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/binding "'$key_binding'"
+    
+    echo "✅ Atalho criado com sucesso!"
+else
+    echo "❌ Operação cancelada."
+fi

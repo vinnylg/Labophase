@@ -1,0 +1,3 @@
+#!/bin/bash
+LAST_WS=$(cat $HOME/.local/state/last_workspace)
+$HOME/.local/bin/workspace_move $((LAST_WS + 1)) && $HOME/.local/bin/workspace_switch $((LAST_WS + 1))
