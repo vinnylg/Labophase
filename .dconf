@@ -49,7 +49,7 @@ window-position=(964, 49)
 word-size=64
 
 [org/gnome/control-center]
-last-panel='info-overview'
+last-panel='desktop-workspaces'
 
 [org/gnome/desktop/a11y/applications]
 screen-magnifier-enabled=false
@@ -198,7 +198,7 @@ toggle-fullscreen=['<Shift><Super>f', '<Shift><Super>m']
 action-middle-click-titlebar='minimize'
 auto-raise=true
 button-layout='appmenu:close'
-focus-mode='click'
+focus-mode='mouse'
 num-workspaces=10
 
 [org/gnome/evolution-data-server]
@@ -260,7 +260,7 @@ width=1358
 center-new-windows=true
 dynamic-workspaces=false
 edge-tiling=false
-workspaces-only-on-primary=false
+workspaces-only-on-primary=true
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
@@ -760,7 +760,7 @@ radius-bottomleft=true
 radius-bottomright=true
 radius-topleft=true
 radius-topright=true
-reloadstyle=true
+reloadstyle=false
 removestyle=false
 set-fullscreen=true
 set-notifications=false
