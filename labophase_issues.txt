@@ -1,9 +1,0 @@
-mouse jump when change workspace with touchpad
-workspace move gui not change last_workspace, .desktop not working
-# .desktop scripts are wrong, because they run once at startup and not stay running 
-
-custom keys not check if path exist, if keys already is in use, etc
-ctrl+alt+del == show options to shutdown, suspend, restart, lock, logout etc...
-lid close not suspend but not change display to hdmi
-
-dconf_restore not working

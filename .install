@@ -1,8 +1,10 @@
+#!/bin/bash
+
 #wget -O - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg
 #echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
 #sudo apt update && sudo apt install microsoft-edge-stable
 
-sudo apt install google-chrome-stable gnome-tweaks dconf-editor xclip tree bat meld exa gnome-shell-extension-manager chrome-gnome-shell tmux htop wmctrl code gir1.2-gtop-2.0
+#sudo apt install google-chrome-stable gnome-tweaks dconf-editor xclip tree bat meld exa gnome-shell-extension-manager chrome-gnome-shell tmux htop wmctrl code gir1.2-gtop-2.0
 
 #gsettings set org.gnome.shell disable-extension-version-validation true
 
@@ -11,3 +13,5 @@ sudo apt install google-chrome-stable gnome-tweaks dconf-editor xclip tree bat m
 #npm install gtop -g
 
 #sudo apt install libinput-tools xdotool
+
+sudo apt install texlive-extra-utils gparted
