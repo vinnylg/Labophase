@@ -1,12 +1,17 @@
-- name: TODO to Issue
-  uses: alstr/todo-to-issue-action@v5.1.10
-  with:
-    # Acesso ao token do GitHub para permitir operações na API
-    TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    # Opcional: Tenta fechar issues quando o TODO associado for removido
-    CLOSE_ISSUES: true
-    # Opcional: Formata cada linha de um TODO multiline em um parágrafo no issue
-    AUTO_P: true
-    # Ignorar arquivos específicos
-    IGNORE: "**/node_modules/**,**/dist/**"
+name: TODO to Issue
+on:
+  push:
 
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      
+      - name: TODO to Issue
+        uses: alstr/todo-to-issue-action@v5.1.10
+        with:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLOSE_ISSUES: true
+          IGNORE: "**/node_modules/**,**/dist/**"
