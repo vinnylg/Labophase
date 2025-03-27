@@ -1,0 +1,181 @@
+#!/bin/bash
+# ~/.local/bin/new_shortcut (versão aprimorada)
+
+# Habilitar edição de linha (modo emacs)
+set -o emacs
+
+echo "🛠️  GNOME Custom Shortcut Manager"
+echo ""
+
+# Função para verificar conflitos em todos os atalhos
+check_key_conflict() {
+    local key_binding=$1
+    local conflict_custom conflict_system
+
+    # Verificar conflitos em atalhos customizados
+    conflict_custom=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | \
+        tr -d "[]'," | xargs -n1 | while read path; do
+            [ -z "$path" ] && continue
+            # Se o schema custom-keybinding estiver disponível
+            if gsettings list-schemas | grep -q "^org.gnome.settings-daemon.plugins.media-keys.custom-keybinding$"; then
+                binding=$(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path" binding 2>/dev/null)
+                if [[ "$binding" == "'$key_binding'" ]]; then
+                    name=$(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path" name 2>/dev/null)
+                    echo "$path:$name:$key_binding"
+                fi
+            fi
+        done | grep -v "/$dir_name/")
+
+    # Verificar conflitos nos atalhos do sistema (excluindo custom-keybindings)
+    conflict_system=$(gsettings list-recursively org.gnome.settings-daemon.plugins.media-keys | \
+        grep -v "custom-keybindings" | grep -F "'$key_binding'" 2>/dev/null)
+
+    if [ -n "$conflict_custom" ] || [ -n "$conflict_system" ]; then
+        echo ""
+        echo "⚠️  Conflito encontrado:"
+        if [ -n "$conflict_custom" ]; then
+            echo "   Atalhos personalizados:"
+            echo "$conflict_custom" | awk -F: '{printf "   %s (%s) -> %s\n", $3, $2, $1}'
+        fi
+        if [ -n "$conflict_system" ]; then
+            echo "   Atalhos do sistema:"
+            echo "$conflict_system" | awk -F"'" '{print "   " $4 " -> " $2}'
+        fi
+        return 1
+    fi
+    return 0
+}
+
+# Função para mostrar configuração atual formatada
+show_current_settings() {
+    local full_path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/"
+    echo ""
+    echo "Configuração atual do atalho '$dir_name':"
+    echo "   Nome:    $(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" name 2>/dev/null | sed "s/'//g")"
+    echo "   Comando: $(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" command 2>/dev/null | sed "s/'//g")"
+    echo "   Teclas:  $(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" binding 2>/dev/null | sed "s/'//g")"
+    echo ""
+}
+
+# 1. Obter nome único do atalho (nome do diretório)
+while true; do
+    read -e -p "1. Nome único do atalho (sem espaços, ex: MeuAtalho): " dir_name
+    # Substituir espaços por underscore
+    dir_name=$(echo "$dir_name" | tr ' ' '_')
+    if [ -z "$dir_name" ]; then
+        echo "❌ Erro: Nome não pode ser vazio."
+        continue
+    fi
+    if [[ "$dir_name" =~ [^a-zA-Z0-9_-] ]]; then
+        echo "❌ Erro: Use apenas letras, números, hífens ou underscores."
+        continue
+    fi
+    break
+done
+
+# Verificar se o atalho já existe
+current_keys=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings)
+if [[ "$current_keys" == *"'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/'"* ]]; then
+    echo ""
+    echo "⚠️  Atalho '$dir_name' já existe!"
+    show_current_settings
+    read -e -p "Deseja modificar? (s/n): " edit_choice
+    if [[ ! "$edit_choice" =~ ^[Ss]$ ]]; then
+        echo "❌ Operação cancelada."
+        exit 0
+    fi
+    full_path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/"
+    current_name=$(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" name 2>/dev/null | sed "s/'//g")
+    current_cmd=$(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" command 2>/dev/null | sed "s/'//g")
+    current_binding=$(gsettings get "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" binding 2>/dev/null | sed "s/'//g")
+    is_existing=true
+else
+    is_existing=false
+fi
+
+# 2. Obter nome descritivo
+while true; do
+    if $is_existing; then
+        read -e -p "2. Nome descritivo [atual: $current_name]: " app_name
+        app_name=${app_name:-$current_name}
+    else
+        read -e -p "2. Nome descritivo (ex: 'Abrir Terminal'): " app_name
+    fi
+    if [ -z "$app_name" ]; then
+        echo "❌ Erro: Nome descritivo não pode ser vazio."
+        continue
+    fi
+    break
+done
+
+# 3. Obter comando
+while true; do
+    if $is_existing; then
+        read -e -p "3. Comando completo [atual: $current_cmd]: " command
+        command=${command:-$current_cmd}
+    else
+        read -e -p "3. Comando completo: " command
+    fi
+    if [ -z "$command" ]; then
+        echo "❌ Erro: Comando não pode ser vazio."
+        continue
+    fi
+    break
+done
+
+# 4. Configurar tecla de atalho
+while true; do
+    if $is_existing; then
+        read -e -p "4. Tecla de atalho [atual: $current_binding]: " key_binding
+        key_binding=${key_binding:-$current_binding}
+    else
+        read -e -p "4. Tecla de atalho (ex: <Super>d): " key_binding
+    fi
+    if [ -z "$key_binding" ]; then
+        echo "❌ Erro: Atalho não pode ser vazio."
+        continue
+    fi
+
+    # Verificar conflitos
+    if ! check_key_conflict "$key_binding"; then
+        read -e -p "   Deseja usar mesmo assim? (s/n): " force_choice
+        if [[ "$force_choice" =~ ^[Ss]$ ]]; then
+            break
+        else
+            continue
+        fi
+    else
+        break
+    fi
+done
+
+# Resumo e confirmação final
+echo ""
+echo "🔍 Resumo:"
+echo "   Nome do atalho (dir):  $dir_name"
+echo "   Nome descritivo:       $app_name"
+echo "   Comando:               $command"
+echo "   Tecla de atalho:       $key_binding"
+echo ""
+read -e -p "Confirmar? (s/n): " confirm
+
+if [[ "$confirm" =~ ^[Ss]$ ]]; then
+    # Se for novo, adicionar à lista de keybindings
+    if ! $is_existing; then
+        new_list="${current_keys%]*}, '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/']"
+        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "$new_list"
+    fi
+
+    # Criar ou atualizar o shortcut
+    full_path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/"
+    gsettings set "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" name "$app_name"
+    gsettings set "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" command "$command"
+    gsettings set "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$full_path" binding "$key_binding"
+
+    echo ""
+    echo "✅ Atalho '$dir_name' configurado com sucesso!"
+    echo "   Você pode editar manualmente com:"
+    echo "   dconf editor → /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/$dir_name/"
+else
+    echo "❌ Operação cancelada."
+fi

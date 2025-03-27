@@ -1,8 +1,36 @@
 #!/bin/bash
+# ~/.local/bin/restore_dconf
 
-if [ -f $HOME/.dconf ]; then
-    dconf load / < $HOME/.dconf
-    echo "$HOME/.dconf loaded"
-else
-    echo "$HOME/.dconf not found"
+BACKUP_FILE="$HOME/.dconf"
+
+if [ ! -f "$BACKUP_FILE" ]; then
+    echo "❌ Arquivo de backup não encontrado: $BACKUP_FILE"
+    exit 1
 fi
+
+# Criar arquivo temporário com estado atual
+CURRENT_STATE=$(mktemp)
+trap 'rm -f "$CURRENT_STATE"' EXIT
+dconf dump / > "$CURRENT_STATE"
+
+# Verificar se há diferenças
+if diff -q "$CURRENT_STATE" "$BACKUP_FILE" >/dev/null; then
+    echo "✅ Nenhuma diferença encontrada entre o backup e a configuração atual"
+    exit 0
+fi
+
+# Mostrar diff interativo
+echo "🔍 Visualizando diferenças (saia com :q no vimdiff para continuar)"
+vimdiff "$CURRENT_STATE" "$BACKUP_FILE"
+
+# Confirmação final
+read -p "⚠️  Deseja aplicar estas alterações? (s/n): " confirm
+if [[ ! "$confirm" =~ ^[Ss]$ ]]; then
+    echo "❌ Restauração cancelada"
+    exit 0
+fi
+
+# Aplicar mudanças
+echo "🔄 Restaurando configurações..."
+dconf load / < "$BACKUP_FILE"
+echo "✅ Configurações restauradas com sucesso de: $BACKUP_FILE"

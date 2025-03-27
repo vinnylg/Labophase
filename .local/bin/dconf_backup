@@ -11,4 +11,4 @@ BEGIN { RS = ""; FS = "\n" }  # Define blocos separados por linhas em branco
     }
 }' /tmp/.dconf > $HOME/.dconf
 
-echo "$HOME/.dconf saved"
+echo "✅ Backup salvo em: $HOME/.dconf"
