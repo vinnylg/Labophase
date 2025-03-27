@@ -29,6 +29,4 @@
 !.config/systemd/user/
 !.config/systemd/user/*
 
-!labophase_issues.txt
-
-
+!labophase_issues.py
