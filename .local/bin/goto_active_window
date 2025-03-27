@@ -1,0 +1,18 @@
+#!/bin/bash
+# ~/.local/bin/jump_to_active_window
+
+# 1. Encontra a janela ativa
+ACTIVE_WIN=$(xdotool getactivewindow)
+
+# 2. Obtém a posição central da janela
+eval $(xdotool getwindowgeometry --shell $ACTIVE_WIN)
+
+# Calcula o centro (X + largura/2, Y + altura/2)
+CENTER_X=$((X + WIDTH / 2))
+CENTER_Y=$((Y + HEIGHT / 2))
+
+# 3. Move o mouse suavemente para o centro
+xdotool mousemove --sync $CENTER_X $CENTER_Y
+
+# 4. Opcional: Dá um feedback visual
+notify-send -t 1000 "Mouse" "Movido para janela ativa" --icon=mouse-pointer

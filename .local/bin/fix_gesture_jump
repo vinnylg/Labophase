@@ -1,9 +1,0 @@
-#!/bin/bash
-# Monitora gestos e previne o salto do mouse
-while read -r line; do
-    if [[ "$line" == *"switch-to-workspace"* ]]; then
-        eval $(xdotool getmouselocation --shell)
-        sleep 0.3  # Ajuste conforme necessidade
-        xdotool mousemove $X $Y
-    fi
-done < <(dbus-monitor --profile "interface='org.gnome.Shell',member='SwitchWorkspace'")

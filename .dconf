@@ -1,11 +1,11 @@
 [ca/desrt/dconf-editor]
 restore-view=false
-saved-pathbar-path='/ca/desrt/dconf-editor/saved-view'
-saved-view='/ca/desrt/dconf-editor/'
+saved-pathbar-path='/org/gnome/calculator/'
+saved-view='/'
 show-warning=false
-window-height=681
+window-height=976
 window-is-maximized=false
-window-width=1350
+window-width=948
 
 [com/mattjakeman/ExtensionManager]
 last-used-version='0.3.0'
@@ -49,7 +49,7 @@ window-position=(964, 49)
 word-size=64
 
 [org/gnome/control-center]
-last-panel='desktop-workspaces'
+last-panel='keyboard'
 
 [org/gnome/desktop/a11y/applications]
 screen-magnifier-enabled=false
@@ -198,7 +198,7 @@ toggle-fullscreen=['<Shift><Super>f', '<Shift><Super>m']
 action-middle-click-titlebar='minimize'
 auto-raise=true
 button-layout='appmenu:close'
-focus-mode='mouse'
+focus-mode='click'
 num-workspaces=10
 
 [org/gnome/evolution-data-server]
@@ -818,7 +818,7 @@ gap-inner=uint32 2
 gap-outer=uint32 2
 hint-color-rgba='rgba(108,138,251,0.486486)'
 mouse-cursor-focus-location=uint32 4
-mouse-cursor-follows-active-window=true
+mouse-cursor-follows-active-window=false
 show-skip-taskbar=true
 show-stack-tab-buttons=true
 show-title=false

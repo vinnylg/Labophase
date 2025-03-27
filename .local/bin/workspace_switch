@@ -9,12 +9,12 @@ CURRENT_WS=$(wmctrl -d | grep '*' | awk '{print $1}')
 
 [ "$TARGET_WS" -ne "$CURRENT_WS" ] && {
     # get mouse position to avoid mouse jumping
-    eval $(xdotool getmouselocation --shell) 
+    # eval $(xdotool getmouselocation --shell) 
 
     # save current workspace number and goto target workspace
     echo "$CURRENT_WS" > $HOME/.local/state/last_workspace 
     wmctrl -s "$TARGET_WS" 
 
     # return mouse to initial position
-    (sleep 0.05 && xdotool mousemove $X $Y) &
+    # (sleep 0.05 && xdotool mousemove $X $Y) &
 }

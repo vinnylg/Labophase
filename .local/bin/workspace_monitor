@@ -1,9 +1,21 @@
 #!/bin/bash
-# Monitora mudanças de workspace via DBus
-dbus-monitor --profile "interface='org.gnome.Shell',member='ActiveWorkspaceChanged'" |
-while read -r line; do
-  if [[ $line == *"ActiveWorkspaceChanged"* ]]; then
-    CURRENT_WS=$(wmctrl -d | grep '*' | cut -d ' ' -f1)
-    echo $CURRENT_WS > $HOME/.local/state/last_workspace
-  fi
+# ~/.local/bin/workspace_monitor (versão corrigida)
+
+mkdir -p ~/.local/state
+WORKSPACE_FILE=~/.local/state/last_workspace
+
+# Inicializa com o workspace atual
+CURRENT_WS=$(wmctrl -d | awk '/\*/{print $1}')
+echo "$CURRENT_WS" > "$WORKSPACE_FILE"
+
+while true; do
+    NEW_WS=$(wmctrl -d | awk '/\*/{print $1}')
+    
+    # Só atualiza se o workspace mudar
+    if [[ "$NEW_WS" != "$CURRENT_WS" ]]; then
+        echo "$CURRENT_WS" > "$WORKSPACE_FILE"  # Armazena o ANTERIOR
+        CURRENT_WS="$NEW_WS"
+    fi
+    
+    sleep 0.3
 done

@@ -25,6 +25,9 @@
 !.config/autostart/
 !.config/autostart/*
 
+!.config/systemd/
+!.config/systemd/user/
+!.config/systemd/user/*
 
 !labophase_issues.txt
 

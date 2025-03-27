@@ -1,0 +1,10 @@
+[Unit]
+Description=Workspace and Mouse Position Monitor
+
+[Service]
+ExecStart=%h/.local/bin/workspace_monitor
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
