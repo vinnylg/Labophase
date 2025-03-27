@@ -1,17 +1,11 @@
-name: TODO to Issue
-on:
-  push:
-
+name: "Run TODO to Issue"
+on: [ "push" ]
 jobs:
-  create-issues:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: "ubuntu-latest"
+    permissions:
+      issues: write
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      
-      - name: TODO to Issue
-        uses: alstr/todo-to-issue-action@v5.1.10
-        with:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CLOSE_ISSUES: true
-          IGNORE: "**/node_modules/**,**/dist/**"
+      - uses: "actions/checkout@v4"
+      - name: "TODO to Issue"
+        uses: "alstr/todo-to-issue-action@v5"
